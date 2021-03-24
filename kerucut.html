@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hitung Kerucut - 3D Calc</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/silinder.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="js/function.js"></script>
+</head>
+
+<body>
+    <section style="height: 100%; width: 100%; box-sizing: border-box; background-color: rgb(179, 175, 228)">
+        <div class="header-4-4" style="font-family: 'Poppins', sans-serif;">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#targetModal-header-4-4">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="modal-header-4-4 modal fade" id="targetModal-header-4-4" tabindex="-1" role="dialog" aria-labelledby="targetModalLabel-header-4-4" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content modal-content-header-4-4" style="background-color: #000000;">
+                            <div class="modal-body" style="padding:	2rem; padding-top: 0; padding-bottom: 0;">
+                                <ul class="navbar-nav responsive-header-4-4 me-auto mt-2 mt-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="bola.html">Bola</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" style="font-weight: 700">Kerucut</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="silinder.html">Silinder</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo-header-4-4">
+                    <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html" style="color: #ffffff;">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="bola.html" style="color: #ffffff">Bola</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: #ffffff; font-weight: 700">Kerucut</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="silinder.html" style="color: #ffffff">Silinder</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="d-flex flex-column align-items-center h-100 flex-lg-row" style="font-family: 'Poppins', sans-serif;">
+            <div class="position-relative d-none d-lg-block h-100 width-left-content-3-9">
+                <img class="position-absolute img-fluid centered-content-3-9" src="img/math 3.png">
+            </div>
+            <div class="d-flex mx-auto align-items-left justify-content-left width-right-content-3-9 ">
+                <div class="right-content-3-9 ">
+                    <div class="align-items-center justify-content-center d-lg-none d-flex ">
+                        <img class="img-fluid " src="img/math 3.png " alt=" ">
+                    </div>
+                    <h2 id="welcome" class="title-text-content-3-9 "> Selamat Datang
+                    </h2>
+                    <p class="caption-text-content-3-9 ">Yuk masukkan tinggi dan luas kerucut yang ingin kamu hitung!</p>
+                    <form style="margin-top: 1.5rem; " action=" " method="post ">
+
+                        <div id="div-radius" style="margin-bottom: 1.75rem; ">
+                            <label for=" " class="d-block input-label-content-3-9 ">Masukkan jari-jari kerucut (dalam meter):</label>
+                            <div class="d-flex w-100 div-input-content-3-9 ">
+                                <input id="radius" class="input-field-content-3-9 " placeholder="Masukkan jari-jari kerucut ">
+                            </div>
+                        </div>
+
+                        <div id="div-pelukis" style="margin-bottom: 1.75rem; ">
+                            <label for=" " class="d-block pelukis-line ">Masukkan garis pelukis kerucut (dalam meter):</label>
+                            <div class="d-flex w-100 div-input-content-3-9 ">
+                                <input id="pelukis-line" class="input-field-content-3-9 " placeholder="Masukkan garis pelukis kerucut ">
+                            </div>
+                        </div>
+
+                        <div id="div-tinggi-kerucut" style="margin-bottom: 1.75rem; ">
+                            <label for=" " class="d-block input-label-content-3-9 ">Masukkan tinggi kerucut (dalam meter):</label>
+                            <div class="d-flex w-100 div-input-content-3-9 ">
+                                <input id="tinggi-kerucut" class="input-field-content-3-9 " placeholder="Masukkan tinggi kerucut ">
+                            </div>
+                        </div>
+
+                        <button class="btn btn-fill-content-3-9 d-block w-100 " type="button" onclick="hitungKerucut()">Hitung</button>
+                    </form>
+
+                    <div id="hasil-hitung-kerucut" class="hasil-hitung container">
+                        <h3 class="hasil-judul">Hasil Perhitungan </h3>
+                        <div class="tampilkan-hasil">
+                            <p id="luas-kerucut">Luas Permukaan Kerucut: </p>
+                            <p id="volume-kerucut">Volume Kerucut: </p>
+                        </div>
+                    </div>
+
+                </div>
+
+    </section>
+
+    <!-- Footer -->
+    <section style="height: 100%; width: 100%; box-sizing: border-box; background-color: rgb(255, 255, 255);">
+        <div class="info-footer-footer-2-2">
+            <div class="">
+                <hr class="hr-footer-2-2">
+            </div>
+            <div class="mx-auto d-flex flex-column flex-lg-row align-items-center footer-info-space-footer-2-2">
+                <div class="d-flex title-font font-medium align-items-center" style="cursor: pointer;">
+
+                    <a href="https://www.facebook.com/yasin.a.yahya" class="social-media-c-footer-2-2 social-media-center-1-footer-2-2" target="_blank"> <img src="img/facebook.png" alt="facebook"> </a>
+
+                    <a href="https://twitter.com/yasinalfiyahya" class="social-media-c-footer-2-2 social-media-center-1-footer-2-2" , target="_blank"><img src="img/twitter.png" alt="twitter"></a>
+
+                    <a href="https://github.com/yasinAlfiYahya" class="social-media-c-footer-2-2 social-media-center-1-footer-2-2" target="_blank"><img src="img/github.png" alt="github"></a>
+
+                    <a href="https://www.instagram.com/yasin_alfiyahya/" class="social-media-c-footer-2-2 social-media-center-1-footer-2-2" target="_blank"><img src="img/instagram.png" alt="instagram"></a>
+
+                </div>
+
+                <nav class="mx-auto d-flex flex-wrap align-items-center justify-content-center footer-responsive-space-footer-2-2">
+                    <a class="footer-link-footer-2-2" style="text-decoration: none;">Terms of Service</a>
+                    <span style="margin-right:1.25rem">|</span>
+                    <a class="footer-link-footer-2-2" style="text-decoration: none;">Privacy Policy</a>
+                    <span style="margin-right:1.25rem">|</span>
+                    <a class="footer-link-footer-2-2" style="text-decoration: none;">Licenses</a>
+                </nav>
+
+                <nav class="d-flex flex-lg-row flex-column align-items-center justify-content-center">
+                    <p style="margin: 0">Copyright © 2021 Yasin Alfi Yahya</p>
+                </nav>
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js " integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0 " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <!-- <script>
+        window.sapa()
+    </script> -->
+</body>
+
+</html>
